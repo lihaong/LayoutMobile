@@ -5,7 +5,7 @@ String username = "";
 String password = "";
 void main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: true,
+    debugShowCheckedModeBanner: false,
     title: '123200054 / Muhammad Fajar Andikha',
     theme: ThemeData(
       // This is the theme of your application.

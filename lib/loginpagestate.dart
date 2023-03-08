@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 String username = "";
 String password = "";
 bool isLoginSuccess = true;
+bool isHiden = true;
 
 class LoginPageState extends StatefulWidget {
   const LoginPageState({Key? key}) : super(key: key);
@@ -16,13 +17,25 @@ class _LoginPageStateState extends State<LoginPageState> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+
           title: Text("Login Page"),
         ),
-        body: Column(children: [
-          _usernameField(),
-          _passwordField(),
-          _loginButton(context),
-        ]),
+        body: SafeArea(
+          child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FlutterLogo (size: 60),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  _usernameField(),
+                  _passwordField(),
+                  _loginButton(context),
+                  TextButton(onPressed: (){}, child: Text('Forgot Password', style: TextStyle(color: Colors.grey),))
+                ],
+              )),
+        ),
       ),
     );
   }
@@ -62,11 +75,19 @@ class _LoginPageStateState extends State<LoginPageState> {
       10),
       child: TextFormField(
         enabled: true,
+        obscureText: isHiden,
         onChanged: (value) {
           password = value;
         },
-        obscureText: true,
         decoration: InputDecoration(
+          suffix: IconButton(
+            onPressed: (){
+              setState(() {
+                isHiden =! isHiden;
+              });
+            },
+            icon: Icon(Icons.remove_red_eye),
+          ),
           hintText: 'Password',
           contentPadding: const EdgeInsets.all(8.0),
           border: OutlineInputBorder(
@@ -112,6 +133,7 @@ class _LoginPageStateState extends State<LoginPageState> {
         print("isLoginSuccess : $isLoginSuccess");
         SnackBar snackBar = SnackBar(
           content: Text(text),
+          backgroundColor: (isLoginSuccess) ? Colors.blue : Colors.red,
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },
