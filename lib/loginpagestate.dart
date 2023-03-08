@@ -81,9 +81,12 @@ class _LoginPageStateState extends State<LoginPageState> {
       child: ElevatedButton(
         onPressed: () {
           String text = "";
-          if (username == "flutterMobile" && password ==
-              "flutter123"){
+          if (username == "flutterMobile" && password == "flutter123")
+          { setState(() {
             text = "Login Success";
+            isLoginSucces = true;
+          });
+
           } else {
             text = "Login Failed";
           }

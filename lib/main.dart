@@ -61,38 +61,9 @@ class FirstRoute extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                TextFormField(
-                  controller: getUser,
-                  decoration: InputDecoration(
-                    labelText: 'username',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                  ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                TextFormField(
-                  controller: getPass,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container (
-                  width: 250,
-                  child: ElevatedButton(
-                    onPressed: () {
-                    },
-                    child: Text('Login'),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
+                _usernameField(),
+                _passwordField(),
+                _loginButton(context),
                 TextButton(onPressed: (){}, child: Text('Forgot Password', style: TextStyle(color: Colors.grey),))
 
 
