@@ -80,13 +80,13 @@ class _LoginPageStateState extends State<LoginPageState> {
           password = value;
         },
         decoration: InputDecoration(
-          suffix: IconButton(
-            onPressed: (){
+          suffixIcon: InkWell(
+            onTap: (){
               setState(() {
                 isHiden =! isHiden;
               });
             },
-            icon: Icon(Icons.remove_red_eye),
+            child: Icon((isHiden) ? Icons.lock : Icons.lock_open_outlined) ,
           ),
           hintText: 'Password',
           contentPadding: const EdgeInsets.all(8.0),
