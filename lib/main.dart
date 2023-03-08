@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_1/loginpagestate.dart';
+
 String username = "";
 String password = "";
 void main() {
@@ -9,12 +11,11 @@ void main() {
       // This is the theme of your application.
       primarySwatch: Colors.blue,
     ),
-    home: FirstRoute(),
+    home: LoginPageState(),
   ));
 }
 
 showAlertDialog(BuildContext context) {
-
   // set up the button
   Widget okButton = TextButton(
     child: Text("OK"),
