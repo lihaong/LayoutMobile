@@ -39,7 +39,7 @@ class KalkulatorLayangState extends State<Layang> {
       appBar: AppBar(
         title: Text('Kite Calculator'),
       ),
-      body: Padding(
+      body: Padding(  
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
