@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Loading',
+        title: 'Quiz 1',
         home: LoadingPage());
   }
 }
@@ -30,8 +30,7 @@ class _LoadingPageState extends State<LoadingPage> {
 
   void navigateToDashboard() async {
     await Future.delayed(
-        Duration(seconds: 2)); // simulate loading for 2 seconds
-
+        Duration(seconds: 2));
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Dashboard()));
   }

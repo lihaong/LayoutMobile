@@ -13,13 +13,13 @@ class KalkulatorSegitigaState extends State<Segitiga> {
   double luas = 0.0;
   double keliling = 0.0;
 
-  void _calculate() {
-    final base = double.parse(alasController.text);
-    final height = double.parse(tinggiController.text);
+  void hitung() {
+    final alas = double.parse(alasController.text);
+    final tinggi = double.parse(tinggiController.text);
 
     setState(() {
-      luas = 0.5 * base * height;
-      keliling = base + height + sqrt(pow(base, 2) + pow(height, 2));
+      luas = 0.5 * alas * tinggi;
+      keliling = alas + tinggi + sqrt(pow(alas, 2) + pow(tinggi, 2));
     });
   }
 
@@ -59,7 +59,7 @@ class KalkulatorSegitigaState extends State<Segitiga> {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: _calculate,
+              onPressed: hitung,
               child: Text('Hitung'),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.green),
